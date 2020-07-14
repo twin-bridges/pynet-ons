@@ -1,0 +1,9 @@
+
+Files Ex1
+---------
+a. Create a three line file
+b. Write a python program that reads this file and prints out the lines of the file
+c. write a python program that writes a different file
+d. Close this new file and re-open it and append to it.
+e. Check your code into GitHub
+
