@@ -1,0 +1,5 @@
+---
+- device_name: srx1
+  device_type: juniper_junos
+  host: srx1.lasthop.io
+  username: pyclass
