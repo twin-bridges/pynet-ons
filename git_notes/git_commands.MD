@@ -9,7 +9,7 @@ git config --global user.email "jdoe@domain.com"
 
 ## Clone a repository
 ```
-git clone https://github.com/ktbyers/pynet_ons  
+git clone https://github.com/twin-bridges/pynet-ons
 ```
 
 
