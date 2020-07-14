@@ -1,0 +1,9 @@
+
+Re-use Ex2
+-----------
+
+Create a Python module containing a function
+Verify you can import this module and execute this function
+Move this module into a different directory; modify your PYTHONPATH such that you can still import
+    the module.
+

@@ -1,0 +1,27 @@
+
+Netmiko Ex1
+-----------
+
+Write a Netmiko script that connects to one Cisco router and one Juniper SRX.
+a. Print the current prompt
+b. use send_command to retrieve 'show version' from the two devices. 
+c. use send_command to retrieve running configuration from the two devices. 
+d. Save the running config to a file.
+
+
+Dictionary for network devices that can be used with Netmiko.
+
+    cisco3 = {
+        'device_type': 'cisco_ios',
+        'host':   'cisco3.lasthop.io',
+        'username': 'pyclass',
+        'password': getpass(),
+    }
+
+    srx2 = {
+        'device_type': 'juniper_junos',
+        'host':   'srx2.lasthop.io',
+        'username': 'pyclass',
+        'password': getpass(),
+    }
+
