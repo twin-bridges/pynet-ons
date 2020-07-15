@@ -1,0 +1,9 @@
+
+Netmiko Ex2
+-----------
+
+a. Connect to one of the SR-OS devices.
+b. Configure and save the following change.
+
+    system location "San Francisco"
+

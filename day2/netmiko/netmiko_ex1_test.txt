@@ -1,0 +1,9 @@
+
+Netmiko Ex1 Tests
+-----------------
+
+Using 'pytest' create tests that verify the following:
+a. That the router prompt for each test device is in the output.
+b. That 'show version' for each test device is in the output.
+c. That a configuration file was created corresponding to each device you connected to.
+

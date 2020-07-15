@@ -1,0 +1,27 @@
+
+Netmiko Ex1
+-----------
+
+Write a Netmiko script that connects to one SR-OS router and one Juniper vMX.
+a. Print the current prompt
+b. use send_command to retrieve 'show version' from the two devices. 
+c. use send_command to retrieve running configuration from the two devices. 
+d. Save the running config to a file.
+
+
+Dictionary for network devices that can be used with Netmiko.
+
+    sros1 = {
+        "device_type": "nokia_sros",
+        "host": "sros.lasthop.io",
+        "username": "admin",
+        "password": sros_password,
+        "port": 2211,
+    }
+
+    vmx1 = { 
+        "device_type": "juniper_junos",
+        "host": "vmx1.lasthop.io",
+        "username": "pyclass",
+        "password": vmx_password,
+    }

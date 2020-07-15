@@ -1,9 +1,0 @@
-
-Netmiko Ex2
------------
-
-a. Connect to one of the Cisco NX-OS devices
-b. Configure and save (write mem) the following change.
-
-    logging console 3
-
