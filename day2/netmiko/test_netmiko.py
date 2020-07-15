@@ -37,3 +37,9 @@ def test_netmiko_ex1():
     files = ["A:sros1.txt", "pyclass@vmx1.txt"]
     for a_file in files:
         assert os.path.isfile(a_file)
+
+
+def test_config_location(netmiko_connect_sros4):
+    config = netmiko_connect_sros4.send_command("admin display-config")
+    assert 'location "San Francisco"' in config
+    assert True
