@@ -7,13 +7,12 @@ if __name__ == "__main__":
 
     password = getpass("Enter password: ")
     device = {
-        "device_type": "juniper_junos",
-        "host": "vmx1.lasthop.io",
+        "device_type": "cisco_xe",
+        "host": "cisco3.lasthop.io",
         "username": "pyclass",
         "password": password,
-        "session_log": "my_session.txt",
     }
 
     net_connect = ConnectHandler(**device)
-    pprint(net_connect.send_command("show interfaces", use_textfsm=True))
+    pprint(net_connect.send_command("show ip int brief", use_genie=True))
     net_connect.disconnect()

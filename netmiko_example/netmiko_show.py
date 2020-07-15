@@ -12,6 +12,10 @@ device = {
     "port": 2211,
 }
 
-# Will automatically 'disconnect()'
-with ConnectHandler(**device) as net_connect:
-    print(net_connect.find_prompt())
+net_connect = ConnectHandler(**device)
+output = net_connect.send_command("show system lldp neighbor")
+net_connect.disconnect()
+
+print("-" * 50)
+print(output)
+print("-" * 50)
