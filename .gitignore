@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 
 netmiko_example/my_session.txt
+day2/netmiko/pyclass@vmx1.txt
+day2/netmiko/pyclass@vmx1.txt

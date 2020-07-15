@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 """Exercises using Netmiko"""
+import os
 from getpass import getpass
 from netmiko import ConnectHandler
 
@@ -12,8 +13,16 @@ def save_file(filename, show_run):
 
 def main():
     """Exercises using Netmiko"""
-    sros_password = getpass("Enter SROS password:")
-    vmx_password = getpass("Enter vMX password:")
+
+    # For automated testing
+    sros_password = os.getenv("SROS_PASSWORD")
+    if sros_password is None:
+        sros_password = getpass("Enter SROS password: ")
+
+    vmx_password = os.getenv("JNPR_PASSWORD")
+    if vmx_password is None:
+        vmx_password = getpass("Enter vMX password: ")
+
     sros1 = {
         "device_type": "nokia_sros",
         "host": "sros.lasthop.io",
@@ -22,14 +31,14 @@ def main():
         "port": 2211,
     }
 
-    srx2 = {
+    vmx1 = {
         "device_type": "juniper_junos",
-        "host": "srx2.lasthop.io",
+        "host": "vmx1.lasthop.io",
         "username": "pyclass",
         "password": vmx_password,
     }
 
-    for a_device in (sros1,):
+    for a_device in (sros1, vmx1):
         net_connect = ConnectHandler(**a_device)
         print("Current Prompt: " + net_connect.find_prompt())
 
