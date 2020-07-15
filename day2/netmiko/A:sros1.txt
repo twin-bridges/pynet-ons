@@ -3,7 +3,7 @@
 # Built on Wed Jun 17 13:12:36 PDT 2020 by builder in /builds/c/205B/R2/panos/main/sros
 # Configuration format version 20.5 revision 0
 
-# Generated WED JUL 15 18:59:41 2020 UTC
+# Generated WED JUL 15 21:50:55 2020 UTC
 
 exit all
 configure
@@ -12,10 +12,7 @@ echo "System Configuration"
 #--------------------------------------------------
     system
         name "sros1"
-        location "San Francisco"
-        power-management
-            power-safety-alert 24000
-        exit
+        location "Azure"
         power-shelf 1
             power-shelf-type ps-a4-shelf-dc
             power-module 1
@@ -35,6 +32,9 @@ echo "System Configuration"
                 no shutdown
             exit
             no shutdown
+        exit
+        rollback
+            rollback-location "cf3:\conf-rollback"
         exit
         snmp
             shutdown
@@ -237,6 +237,10 @@ echo "Router (Network Side) Configuration"
             port 1/1/c1/1
             no shutdown
         exit
+        interface "rtr1"
+            address 10.20.1.1/24
+            no shutdown
+        exit
         interface "system"
             no shutdown
         exit
@@ -264,4 +268,4 @@ echo "Log all events for service vprn Configuration"
 
 exit all
 
-# Finished WED JUL 15 18:59:42 2020 UTC
+# Finished WED JUL 15 21:50:55 2020 UTC

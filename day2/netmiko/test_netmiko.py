@@ -2,6 +2,7 @@ import re
 import os.path
 from utilities import subprocess_runner
 
+
 def test_file_write_func():
     from netmiko_ex1 import save_file
 
