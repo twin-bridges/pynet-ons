@@ -12,6 +12,6 @@ def netmiko_connect():
         "device_type": "juniper_junos",
         "host": "vmx2.lasthop.io",
         "username": "pyclass",
-        "password": os.environ["JNPR_PASSWORD"]
+        "password": os.environ["JNPR_PASSWORD"],
     }
     return ConnectHandler(**device)

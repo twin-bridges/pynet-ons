@@ -16,8 +16,8 @@ print(etree.tostring(my_tree).decode())
 print(my_tree)
 
 # Loop over the children of the tree
-for e in my_tree: 
-    print(e) 
+for e in my_tree:
+    print(e)
 
 children = my_tree.getchildren()
 
@@ -45,4 +45,4 @@ print(new_tree)
 host_name = my_tree.find(".//host-name")
 product_model = my_tree.find(".//product-model")
 
-comment = ipdb> my_tree.find("./package-information/comment").text
+comment = ipdb > my_tree.find("./package-information/comment").text

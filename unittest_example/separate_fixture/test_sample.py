@@ -1,4 +1,3 @@
-
 def test_prompt(netmiko_connect):
     assert netmiko_connect.find_prompt() == "pyclass@vmx2>"
 
