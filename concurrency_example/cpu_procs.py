@@ -1,35 +1,41 @@
 """
-Purpose of this example is to demonstrate multiple processes
-(Python instances) being spawned -- in this case up to the
-AMOUNT_OF_MATHS.
+Purpose of this example is to demonstrate multiple processes 
+being used -- in this case up to the PROC_POOL size.
+
+So we submit TASKS=N to the worker pool and as processes free
+up, the tasks get executed.
 
 Use top or activity/system monitor to see multiple instances
-of Python being ran.
+of Python.
 """
 from concurrent.futures import ProcessPoolExecutor, wait
 import math
 import random
 
 
-AMOUNT_OF_MATHS = 8
-# Note: max_workers  will default to num processors on maching * 5 if not given
-MAX_WORKERS = 8
+TASKS = 20
+PROC_POOL = 8
 
 
-def do_maths():
+def math_calculation():
     for i in range(random.randint(10000000, 30000000)):
         final_sqrt = math.sqrt(i)
     return final_sqrt
 
 
 def main():
-    pool = ProcessPoolExecutor(max_workers=MAX_WORKERS)
-    procs = []
-    for _ in range(AMOUNT_OF_MATHS):
-        procs.append(pool.submit(do_maths))
-    wait(procs)
-    for proc in procs:
-        print(proc.result())
+    # Create process pool
+    pool = ProcessPoolExecutor(max_workers=PROC_POOL)
+    futures = []
+
+    # Submit work to process pool
+    for _ in range(TASKS):
+        futures.append(pool.submit(math_calculation))
+
+    # Block waiting for tasks to complete
+    wait(futures)
+    for task_result in futures:
+        print(task_result.result())
 
 
 if __name__ == "__main__":

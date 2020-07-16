@@ -1,35 +1,41 @@
 """
 Purpose of this example is to demonstrate multiple threads
-(Python instances) being spawned -- in this case up to the
-AMOUNT_OF_MATHS.
+being used -- in this case up to the THREAD_POOL size.
+
+So we submit TASKS=N to the worker pool and as threads free
+up, the tasks get executed.
 
 Use top or activity/system monitor to see a single instance
-of Python being ran with very high CPU.
+of Python being ran with a very high CPU utilization.
 """
 from concurrent.futures import ThreadPoolExecutor, wait
 import math
 import random
 
 
-AMOUNT_OF_MATHS = 8
-# Note: max_workers  will default to num processors on maching * 5 if not given
-MAX_WORKERS = 8
+TASKS = 20
+WORKERS = 8
 
 
-def do_maths():
+def math_calculation():
     for i in range(random.randint(10000000, 30000000)):
         final_sqrt = math.sqrt(i)
     return final_sqrt
 
 
 def main():
-    pool = ThreadPoolExecutor(max_workers=MAX_WORKERS)
-    threads = []
-    for _ in range(AMOUNT_OF_MATHS):
-        threads.append(pool.submit(do_maths))
-    wait(threads)
-    for thread in threads:
-        print(thread.result())
+    # Create your thread pool
+    pool = ThreadPoolExecutor(max_workers=WORKERS)
+    futures = []
+
+    # Submit the work to the thread pool
+    for _ in range(TASKS):
+        futures.append(pool.submit(math_calculation))
+
+    # 'wait' will block until all of the tasks are complete
+    wait(futures)
+    for task_result in futures:
+        print(task_result.result())
 
 
 if __name__ == "__main__":

@@ -1,0 +1,1 @@
+curl -s https://netbox.lasthop.io/api/ --insecure | jq "."

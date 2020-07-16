@@ -3,24 +3,29 @@ import math
 import random
 
 
-AMOUNT_OF_MATHS = 8
+TASKS = 20
 # Note: max_workers  will default to num processors on maching * 5 if not given
-MAX_WORKERS = 8
+PROC_POOL = 8
 
 
-def do_maths():
+def math_calculation():
     for i in range(random.randint(10000000, 30000000)):
         final_sqrt = math.sqrt(i)
     return final_sqrt
 
 
 def main():
-    pool = ProcessPoolExecutor(max_workers=MAX_WORKERS)
-    procs = []
-    for _ in range(AMOUNT_OF_MATHS):
-        procs.append(pool.submit(do_maths))
-    for proc in as_completed(procs):
-        print(proc.result())
+    # Create process pool
+    pool = ProcessPoolExecutor(max_workers=PROC_POOL)
+    futures = []
+
+    # Submit work to process pool
+    for _ in range(TASKS):
+        futures.append(pool.submit(math_calculation))
+
+    # Show results as the work completes
+    for task_result in as_completed(futures):
+        print(task_result.result())
 
 
 if __name__ == "__main__":
