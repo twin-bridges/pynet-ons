@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-from __future__ import print_function
-
 net_device = {
     "ip_addr": "172.30.220.1",
     "username": "admin",

@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-from __future__ import print_function
-
 
 def read_file(filename):
     with open(filename) as f:

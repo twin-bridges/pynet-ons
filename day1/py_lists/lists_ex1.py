@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-from __future__ import print_function
-
 my_list = ["hello", "new", "something", "else", "now"]
 my_list.append("whatever")
 my_list.append("xyz")

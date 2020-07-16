@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-from __future__ import print_function
-
 with open("show_version.txt") as f:
     show_ver = f.read().splitlines()
 

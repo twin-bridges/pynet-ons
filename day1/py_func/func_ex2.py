@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-from __future__ import print_function
-
 
 def my_func(x, y, z=20):
     return x + y + z
