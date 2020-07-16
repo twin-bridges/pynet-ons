@@ -1,7 +1,4 @@
 #!/usr/bin/env python
-from __future__ import print_function
-from __future__ import unicode_literals
-
 import yaml
 from pprint import pprint
 
@@ -12,5 +9,5 @@ def read_yaml(filename):
 
 
 if __name__ == "__main__":
-    filename = "yaml_ex2.yml"
+    filename = "yaml_ex1.yml"
     pprint(read_yaml(filename))
