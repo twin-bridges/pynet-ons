@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 from __future__ import print_function
 
-name1 = "Kirk Byers"
+name1 = 'Kirk Byers'
 name2 = "George Washington"
-name3 = "Thomas Jefferson"
+name3 = 'Thomas Jefferson'
 
 try:
     # PY2
