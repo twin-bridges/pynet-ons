@@ -4,7 +4,6 @@ from pprint import pprint
 
 with manager.connect(
     host="srx2.lasthop.io",
-    # host="cisco3.lasthop.io",
     port=830,
     username="pyclass",
     password=getpass(),
