@@ -1,5 +1,5 @@
 
-1. Write a unit test for jnpr exercise1.
+1. Write a test for jnpr exercise1.
 
 2. Use the 'subprocess_runner' function to treat the exercise like a blackbox.
 
