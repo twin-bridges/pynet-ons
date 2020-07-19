@@ -1,4 +1,3 @@
-# content of test_sample.py
 import os
 import pytest
 from jnpr.junos import Device
