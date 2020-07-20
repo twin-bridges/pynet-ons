@@ -4,7 +4,6 @@ from jnpr.junos.op.routes import RouteTable
 from jnpr.junos.op.arp import ArpTable
 
 
-
 def test_jnpr_ex1():
     base_path = "."
     cmd_list = ["python", "ex1_jnpr_facts.py"]
@@ -15,6 +14,7 @@ def test_jnpr_ex1():
     assert return_code == 0
     assert "VM5F0DDCE0AA" in std_out
     assert "vmx1" in std_out
+
 
 def test_jnpr_ex2(pyez_connect):
 

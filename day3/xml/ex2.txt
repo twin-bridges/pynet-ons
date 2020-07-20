@@ -1,0 +1,43 @@
+
+This exercise will parse the XML output of "show interfaces terse" to retrieve
+all of the IPv4 and IPv6 addresses on the device.
+
+>>>>>>>>>>>>>
+
+Using Juniper's PyEZ and its direct "RPC" technique, retrieve the output of
+"show interfaces terse" in XML format.
+
+Remember your mechanism for determining the RPC method name:
+
+  show interfaces terse | display xml rpc
+
+And then convert the RPC tag into a method call.
+
+Once you have the XML output, then use the lxml findall() method to search for
+the "interface-address/ifa-local" tags. 
+
+Structually the XML section will look similar to the following (note, there
+will be more than one of these "address-family" sections).
+
+    <address-family>
+        <address-family-name>inet6</address-family-name>
+        <interface-address>
+            <ifa-local junos:emit="emit">fe80::5254:ff:fe12:bdfe/64</ifa-local>
+        </interface-address>
+        <interface-address>
+            <ifa-local junos:emit="emit">fec0::a:0:0:4/64</ifa-local>
+        </interface-address>
+    </address-family>
+
+The "interface-address/ifa-local" element will provide you the addresses on
+the network device.
+
+From these set of returned addresses, select only the IPv4 and IPv6 addresses.
+
+Print these addresses and their corresponding "address-family-name" to standard
+output.
+
+Note, you can use the "ifa-local" element and call getparent() twice to retrieve
+the "address-family" element. Once you have the address-family element, you can
+use the .find() method to find the "address-family-name" element.
+

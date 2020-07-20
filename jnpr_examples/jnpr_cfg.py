@@ -18,7 +18,7 @@ cfg.load("set system host-name test123", format="set", merge=True)
 print(cfg.diff())
 
 cfg.commit()
-#cfg.commit(comment="Testing from pyez")
+# cfg.commit(comment="Testing from pyez")
 
 cfg.load(path="test_config.conf", format="text", merge=True)
 cfg.rollback(0)

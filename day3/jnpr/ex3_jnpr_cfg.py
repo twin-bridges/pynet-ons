@@ -8,7 +8,7 @@ password = os.getenv("JNPR_PASSWORD")
 if password is None:
     password = getpass("Enter vMX password: ")
 
-import ipdb; ipdb.set_trace()
+# import ipdb; ipdb.set_trace()
 # Create pyez Device object for vmx2
 my_device = Device(host="vmx2.lasthop.io", user="pyclass", password=password)
 my_device.open()

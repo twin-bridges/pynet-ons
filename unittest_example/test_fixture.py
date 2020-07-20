@@ -2,6 +2,7 @@ import pytest
 from getpass import getpass
 from netmiko import ConnectHandler
 
+
 # Fixtures
 @pytest.fixture(scope="module")
 def netmiko_connect():

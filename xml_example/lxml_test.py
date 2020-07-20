@@ -1,4 +1,6 @@
 from lxml import etree
+
+# import xml.etree.ElementTree as etree
 import ipdb
 
 # This will be an ElementTree
@@ -12,7 +14,7 @@ print(doc.getroot())
 my_tree = doc.getroot()
 
 # Look at the XML as a string (must decode as byte-string)
-print(etree.tostring(my_tree).decode())
+print(etree.tostring(my_tree, encoding="unicode", pretty_print=True))
 print(my_tree)
 
 # Loop over the children of the tree

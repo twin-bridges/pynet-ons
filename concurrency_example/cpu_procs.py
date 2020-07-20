@@ -1,5 +1,5 @@
 """
-Purpose of this example is to demonstrate multiple processes 
+Purpose of this example is to demonstrate multiple processes
 being used -- in this case up to the PROC_POOL size.
 
 So we submit TASKS=N to the worker pool and as processes free
