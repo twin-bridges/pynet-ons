@@ -1,16 +1,18 @@
 
-1. Write a test for XML exercise2.
+1. Write a test for XML exercise2 (Juniper RPC Exercise)
 
 2. Your test should treat exercise2 as a black-box and execute it using the
-   subprocess_runner function.
+   "subprocess_runner" function.
 
+==========
 std_out, std_err, return_code = subprocess_runner(cmd_list, exercise_dir=base_path)
+==========
 
-3. Your test should verify the following:
+3. Your test should verify the following items:
 
     a. std_err is a null-string.
-    b. The return_code is 0
-    c. std_out contains the string "inet6" twice and then string "inet" eight times.
-       Note, the two "inet6" strings are included in that count of eight "inet"
-       strings.
+    b. The return_code is 0.
+    c. std_out contains the string "inet6" twice and the string "inet" eight times.
+       Note, the two "inet6" strings are included in the count of eight "inet"
+       strings. In other words, there are 6 x IPv4 interfaces and 2 x IPv6 interfaces.
 
