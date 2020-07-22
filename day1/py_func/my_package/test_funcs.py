@@ -1,4 +1,3 @@
-
 def my_func(x, y, z=100):
     print(f"x is {x}")
     print(f"y is {y}")
@@ -8,10 +7,6 @@ def my_func(x, y, z=100):
 
 if __name__ == "__main__":
     my_list = [22, 7, 18]
-    my_dict = {
-        "x": 7,
-        "y": 0,
-        "z": 22
-    }
+    my_dict = {"x": 7, "y": 0, "z": 22}
     result = my_func(**my_dict)
     print(result)
