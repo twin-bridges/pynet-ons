@@ -1,35 +1,7 @@
+import os
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from getpass import getpass
 from netmiko import ConnectHandler
-
-
-PASSWORD = getpass()
-DEVICES = [
-    {
-        "host": "cisco3.lasthop.io",
-        "username": "pyclass",
-        "password": PASSWORD,
-        "device_type": "cisco_ios",
-    },
-    {
-        "host": "cisco4.lasthop.io",
-        "username": "pyclass",
-        "password": PASSWORD,
-        "device_type": "cisco_ios",
-    },
-    {
-        "host": "arista1.lasthop.io",
-        "username": "pyclass",
-        "password": PASSWORD,
-        "device_type": "arista_eos",
-    },
-    {
-        "host": "arista2.lasthop.io",
-        "username": "pyclass",
-        "password": PASSWORD,
-        "device_type": "arista_eos",
-    },
-]
 
 
 def show_command(dev, cmd):
@@ -40,16 +12,61 @@ def show_command(dev, cmd):
 
 
 def main():
-    pool = ProcessPoolExecutor(max_workers=8)
-    procs = []
 
-    for dev in DEVICES:
-        procs.append(pool.submit(show_command, dev, "show ip arp"))
+    # For automated testing
+    password = os.getenv("SROS_PASSWORD")
+    if password is None:
+        password = getpass("Enter SR-OS password: ")
 
-    for proc in as_completed(procs):
+    devices = [
+        {
+            "host": "sros.lasthop.io",
+            "username": "admin",
+            "password": password,
+            "device_type": "nokia_sros",
+            "port": 2211,
+        },
+        {
+            "host": "sros.lasthop.io",
+            "username": "admin",
+            "password": password,
+            "device_type": "nokia_sros",
+            "port": 2212,
+        },
+        {
+            "host": "sros.lasthop.io",
+            "username": "admin",
+            "password": password,
+            "device_type": "nokia_sros",
+            "port": 2213,
+        },
+        {
+            "host": "sros.lasthop.io",
+            "username": "admin",
+            "password": password,
+            "device_type": "nokia_sros",
+            "port": 2214,
+        },
+    ]
+
+    # Create the thread-pool
+    pool = ProcessPoolExecutor(max_workers=2)
+    futures = []
+
+    # Submit the work to the threadpool (SSH-connection to each device)
+    for dev in devices:
+        new_future = pool.submit(show_command, dev, "show router arp")
+        futures.append(new_future)
+
+    # Process the results as_completed
+    print()
+    print("-" * 80)
+    for result in as_completed(futures):
         print()
-        print(proc.result())
+        print(result.result())
         print()
+    print("-" * 80)
+    print()
 
 
 if __name__ == "__main__":

@@ -63,12 +63,12 @@ def main():
 
     # Print the results
     print()
-    print('-' * 80)
+    print("-" * 80)
     for task in futures:
         print()
         print(task.result())
         print()
-    print('-' * 80)
+    print("-" * 80)
     print()
 
 
