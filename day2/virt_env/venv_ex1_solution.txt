@@ -1,0 +1,55 @@
+$ cd ~
+$ cd VENV
+
+# Exit current virtualenv
+$ deactivate
+
+# Create new virtualenv
+$ python36 -m venv pynet_test
+
+# Activate new virtualenv
+$ source ~/VENV/pynet_test/bin/activate
+
+$ pip list
+Package    Version
+---------- -------
+pip        18.1   
+setuptools 40.6.2 
+You are using pip version 18.1, however version 20.2b1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+
+# Upgrade pip
+$ pip install pip==20.1.1
+Collecting pip==20.1.1
+  Using cached https://files.pythonhosted.org/packages/43/84/23ed6a1796480a6f1a2d38f2802901d078266bda38388954d01d3f2e821d/pip-20.1.1-py2.py3-none-any.whl
+Installing collected packages: pip
+  Found existing installation: pip 18.1
+    Uninstalling pip-18.1:
+      Successfully uninstalled pip-18.1
+Successfully installed pip-20.1.1
+
+
+# Install netmiko package (and dependencies) 
+$ pip install netmiko
+...output omitted
+
+
+# List current packages
+$ pip list
+Package      Version
+------------ -------
+bcrypt       3.1.7
+cffi         1.14.0
+cryptography 2.9.2
+future       0.18.2
+netmiko      3.1.1
+paramiko     2.7.1
+pip          20.1.1
+pycparser    2.20
+PyNaCl       1.4.0
+pyserial     3.4
+scp          0.13.2
+setuptools   40.6.2
+six          1.15.0
+textfsm      1.1.0
+
