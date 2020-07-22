@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-from __future__ import print_function, unicode_literals
 import json
 
 my_list = list(range(10))
