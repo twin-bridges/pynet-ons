@@ -1,5 +1,5 @@
 
-Test 1a. Write a simple function that accepts a "dev" dictionary (dictionary 
+Write a simple function that accepts a "dev" dictionary (dictionary 
 with Netmiko connetion information) and a "cmd" string to execute on the device.
 Return the output of the command from the function.
 
@@ -8,9 +8,4 @@ Using concurrent futures ThreadPoolExecutor, spawn threads to execute
 
 Wait until all threads are completed, then iterate through the results and print
 the result-output.
-
-
-Test 1b. Repeat the test constructed in Test 1a except use pytest.mark.parametrize
-to test sros1, sros2, sros3, and sros4. You should parametrize the device
-dictionary and an IP address that shows up in the output.
 
