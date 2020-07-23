@@ -23,6 +23,15 @@ def test_netmiko_ex1():
 
     std_out, std_err, return_code = subprocess_runner(cmd_list, exercise_dir=base_path)
 
+    # import ipdb; ipdb.set_trace()
+
+    assert return_code == 0
+    assert std_err == ""
+    assert "sros1" in std_out
+    assert "vmx1" in std_out
+    assert "TiMOS-B-20.5.R2" in std_out
+    assert "18.4R1.8" in std_out
+
     # Checks SR-OS
     assert "A:sros1#" in std_out
     assert re.search(r"TiMOS-B-20.5.R2.*Nokia", std_out)
@@ -42,4 +51,3 @@ def test_netmiko_ex1():
 def test_config_location(netmiko_connect_sros4):
     config = netmiko_connect_sros4.send_command("admin display-config")
     assert 'location "San Francisco"' in config
-    assert True

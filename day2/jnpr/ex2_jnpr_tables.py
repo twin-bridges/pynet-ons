@@ -54,6 +54,7 @@ if __name__ == "__main__":
     srx2 = {"host": "srx2.lasthop.io", "user": "pyclass", "password": password}
     device = Device(**srx2)
     device.open()
+    import ipdb; ipdb.set_trace()
 
     check_connected(device)
     routes = gather_routes(device)
