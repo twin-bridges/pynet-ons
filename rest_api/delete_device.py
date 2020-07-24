@@ -9,7 +9,7 @@ requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 if __name__ == "__main__":
 
     token = os.environ["NETBOX_TOKEN"]
-    url = "https://netbox.lasthop.io/api/dcim/devices/24/"
+    url = "https://netbox.lasthop.io/api/dcim/devices/26/"
     http_headers = {
         "Content-Type": "application/json; version=2.4;",
         "authorization": "Token {}".format(token),
