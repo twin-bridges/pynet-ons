@@ -30,3 +30,12 @@ jobs:
       - name: Run linter
         run: |
           pylama .
+
+      - name: Run Tests
+        run: |
+          py.test -s -v  ./unittest_example/pytest_dir/test_my_class.py
+          py.test -s -v  ./unittest_example/pytest_dir/test_skip.py
+          py.test -s -v  ./unittest_example/pytest_dir/test_simple.py
+          py.test -s -v  ./unittest_example/pytest_dir/test_simple2.py
+          py.test -s -v  ./unittest_example/pytest_dir/test_params.py
+
