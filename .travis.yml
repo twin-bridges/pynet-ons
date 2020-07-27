@@ -1,0 +1,19 @@
+---
+dist: xenial
+language: python
+python:
+  - "3.6"
+  - "3.7"
+  - "3.8"
+install: 
+  - pip install -r requirements.txt
+script: 
+  - pylama .
+  - black --check .
+  - ./check_line_lengths.sh 
+  - py.test -s -v  ./unittest_example/pytest_dir/test_my_class.py
+  - py.test -s -v  ./unittest_example/pytest_dir/test_skip.py
+  - py.test -s -v  ./unittest_example/pytest_dir/test_simple.py
+  - py.test -s -v  ./unittest_example/pytest_dir/test_simple2.py
+  - py.test -s -v  ./unittest_example/pytest_dir/test_params.py
+
