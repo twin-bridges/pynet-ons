@@ -23,6 +23,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Run black
+        run: |
+          black --check .
+
       - name: Run linter
         run: |
           pylama .
