@@ -19,8 +19,10 @@ if __name__ == "__main__":
         http_headers["authorization"] = "Token {}".format(token)
 
     response = requests.get(url, headers=http_headers, verify=False)
-    import ipdb; ipdb.set_trace()
-    #response = response.json()
+    import ipdb
+
+    ipdb.set_trace()
+    # response = response.json()
 
     print()
     pprint(response)

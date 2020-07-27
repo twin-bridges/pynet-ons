@@ -1,4 +1,5 @@
 from lxml import etree
+
 # import ipdb
 
 # Using a context manager read in the XML file

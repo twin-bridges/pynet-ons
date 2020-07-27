@@ -5,6 +5,9 @@ import csv
 
 def main():
     """Read a CSV file. Use the first line as a header line. Return a dictionary."""
+    import ipdb
+
+    ipdb.set_trace()
     file_name = "test_net_devices.csv"
     with open(file_name) as f:
         read_csv = csv.DictReader(f)
