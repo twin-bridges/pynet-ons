@@ -6,17 +6,29 @@ from jinja2 import FileSystemLoader, StrictUndefined
 from jinja2.environment import Environment
 
 from getpass import getpass
-from pprint import pprint
 
 USER = "pyclass"
 PASSWORD = getpass()
 
-def render_configs():
-    pass
 
-def load_configs():
-    pass
+def render_configs(j2_env, template_file, my_vars):
+    # Render configs
+    template = j2_env.get_template(template_file)
+    config_section = template.render(**my_vars)
+    return config_section
 
+
+def load_configs(host, config, junos_format="text"):
+
+    # PyEZ connection
+    a_device = Device(host=host, user=USER, password=PASSWORD)
+    a_device.open()
+    a_device.timeout = 90
+
+    # Load config object
+    cfg = Config(a_device)
+    cfg.load(config, format=junos_format, merge=True)
+    return cfg
 
 
 if __name__ == "__main__":
@@ -25,9 +37,6 @@ if __name__ == "__main__":
 
     env = Environment(undefined=StrictUndefined)
     env.loader = FileSystemLoader([".", "./templates/"])
-
-    with open(template_file) as f:
-        bgp_template = f.read()
 
     rtr1 = {
         "device_name": "vmx1.lasthop.io",
@@ -47,9 +56,9 @@ if __name__ == "__main__":
     for bgp_vars in [rtr1, rtr2]:
         device_name = bgp_vars["device_name"]
 
-        # Render configs
-        template = env.get_template(template_file)
-        config_section = template.render(**bgp_vars)
+        config_section = render_configs(
+            env, template_file=template_file, my_vars=bgp_vars
+        )
 
         # Store generated config
         configs[device_name] = config_section
@@ -57,16 +66,12 @@ if __name__ == "__main__":
     # Load configurations
     for host, load_config in configs.items():
 
-        import ipdb; ipdb.set_trace()
+        import ipdb
 
-        # PyEZ connection
-        a_device = Device(host=host, user=USER, password=PASSWORD)
-        a_device.open()
-        a_device.timeout = 90
+        ipdb.set_trace()
 
-        # Load config object
-        cfg = Config(a_device)
-        cfg.load(load_config, format="text", merge=True)
+        cfg = load_configs(host, config=load_config, junos_format="text")
+        commit = False
 
         print()
         print("-" * 70)
@@ -75,7 +80,10 @@ if __name__ == "__main__":
 
         print("Current config differences: ")
         print(cfg.diff())
-        if cfg.diff():
+
+        if commit:
             print("Performing commit")
-            # cfg.commit()
+            cfg.commit()
+        else:
+            cfg.rollback(0)
         print()
