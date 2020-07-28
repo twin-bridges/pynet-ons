@@ -15,8 +15,9 @@ if __name__ == "__main__":
     nr = InitNornir(config_file="config.yaml")
     sros = nr.filter(F(groups__contains="sros"))
 
-    results = sros.run(task=netmiko_send_config, config_commands=cfg)
-    print_result(results)
+    # import ipdb; ipdb.set_trace()
+    agg_result = sros.run(task=netmiko_send_config, config_commands=cfg)
+    print_result(agg_result)
 
-    results = sros.run(task=netmiko_save_config)
-    print_result(results)
+    agg_result = sros.run(task=netmiko_save_config)
+    print_result(agg_result)

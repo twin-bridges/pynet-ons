@@ -1,0 +1,15 @@
+---
+srx2:
+    hostname: srx2.lasthop.io
+    groups:
+      - junos
+    data:
+      interfaces:
+        GigabitEthernet0/0:
+          state: no shut
+          descr: very important interface
+          vlan: 123
+        GigabitEthernet0/1:
+          state: shut
+          descr: not important interface
+          vlan: 1000
