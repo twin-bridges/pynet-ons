@@ -1,0 +1,18 @@
+
+Use the "napalm_get" plugin to retrieve the "config" getter from the
+four Juniper devices in the lab.
+
+Print the results out using the below Python code. Note, the data
+structure returned from Nornir+NAPALM has some nesting so you will need
+to access the ["config"]["running"] key in the result (shown below).
+
+-------
+    print()
+    for k, v in agg_result.items():
+        print("-" * 50)
+        print(k)
+        print(v[0].result["config"]["running"])
+        print("-" * 50)
+    print()
+-------
+
