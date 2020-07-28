@@ -23,5 +23,5 @@ You will probably need the following HTTP Headers:
         "authorization": token,
     }
 
-Prettyprint the JSON payload returned to you from the API.
+Pretty print the JSON payload returned to you from the API.
 
