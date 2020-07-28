@@ -1,4 +1,3 @@
-
 from nornir import InitNornir
 from nornir.plugins.functions.text import print_result
 

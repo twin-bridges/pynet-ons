@@ -1,0 +1,12 @@
+
+Construct a Nornir script that you execute on the four SR-OS devices. Use an
+"F" filter to select the SR-OS devices based on group membership.
+
+Use the "netmiko_send_config" task-plugin to configure the following (on the
+four SR-OS devices):
+
+    /configure system time ntp peer 130.126.24.24
+    /configure system time ntp peer 152.2.21.1
+
+Use the print_result() function to print out the results.
+
