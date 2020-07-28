@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-from __future__ import print_function
 import jinja2
 
 bgp_juniper_template = """
@@ -20,4 +19,4 @@ my_vars = {"remote_as": "100", "peer_ip": "10.10.10.2"}
 # my_vars = {"remote_as": "100"}
 
 template = jinja2.Template(bgp_template)
-print(template.render(my_vars))
+print(template.render(**my_vars))

@@ -1,4 +1,3 @@
-from __future__ import unicode_literals, print_function
 from jinja2 import FileSystemLoader, StrictUndefined
 from jinja2.environment import Environment
 
