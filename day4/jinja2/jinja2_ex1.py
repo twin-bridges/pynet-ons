@@ -2,7 +2,7 @@ from jinja2 import Template
 
 
 def main():
-    bgp_config = '''
+    bgp_config = """
     router bgp {{ local_as }}
       neighbor {{ peer1_ip }} remote-as {{ peer1_as }}
         update-source loopback99
@@ -11,7 +11,7 @@ def main():
       neighbor {{ peer2_ip }} remote-as {{ peer2_as }}
         address-family ipv4 unicast
 
-    '''
+    """
 
     bgp_vars = {
         "local_as": 10,
