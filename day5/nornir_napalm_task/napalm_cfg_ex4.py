@@ -1,6 +1,4 @@
 from nornir import InitNornir
-from nornir.core.filter import F
-from nornir.plugins.functions.text import print_result
 from nornir.plugins.tasks.networking import napalm_configure
 
 
@@ -15,11 +13,11 @@ def main():
     # Print the "diff" out
     for hostname, multi_result in agg_result.items():
         print()
-        print('-' * 40)
+        print("-" * 40)
         print(f"Hostname: {hostname}")
-        print('-' * 25)
+        print("-" * 25)
         print(multi_result[0].diff)
-        print('-' * 40)
+        print("-" * 40)
         print()
 
 

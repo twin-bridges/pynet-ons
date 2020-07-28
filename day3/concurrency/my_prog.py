@@ -8,6 +8,7 @@ def netmiko_show(device_dict):
     prompt = net_connect.find_prompt()
     return prompt
 
+
 if __name__ == "__main__":
 
     WORKERS = 10

@@ -1,6 +1,8 @@
 import os
 
-import ipdb; ipdb.set_trace()
+import ipdb
+
+ipdb.set_trace()
 print()
 print("Current working directory")
 start_dir = os.getcwd()

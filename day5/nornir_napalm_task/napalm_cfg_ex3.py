@@ -1,6 +1,4 @@
 from nornir import InitNornir
-from nornir.core.filter import F
-from nornir.plugins.functions.text import print_result
 from nornir.plugins.tasks.networking import napalm_configure
 
 
@@ -15,9 +13,9 @@ def main():
 
     # Print the "diff" out
     print()
-    print('-' * 40)
-    print(agg_result['vmx1'][0].diff)
-    print('-' * 40)
+    print("-" * 40)
+    print(agg_result["vmx1"][0].diff)
+    print("-" * 40)
     print()
 
 
