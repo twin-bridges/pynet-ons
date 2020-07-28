@@ -1,0 +1,8 @@
+---
+azure:
+  username: nokia
+  password: test123
+  platform: nokia_sros
+
+dc1:
+  platform: nokia_sros
