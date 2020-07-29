@@ -1,0 +1,23 @@
+
+Create a simple custom task that generates an exception.
+
+Use nr.run() to call this custom task.
+
+In the main part of your program (just after your nr.run() call) print
+out the following:
+
+a. The 'aggr_results.failed' (in other words whether your custom task
+failed or succeeded).
+
+b. The '.exception' attribute from aggr_results['vmx1'].
+
+c. The set of 'failed_hosts'.
+
+
+Next 'recover' both 'vmx1' and 'vmx2' so they are no longer considered
+failed.
+
+Finally create a second custom task that just prints the 'name' of the
+host that the task is executing on. Run this final task on ONLY the 
+still failed hosts.
+
