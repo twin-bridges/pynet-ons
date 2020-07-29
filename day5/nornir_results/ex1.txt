@@ -1,0 +1,38 @@
+
+Execute the following script:
+
+-------
+from nornir import InitNornir
+
+
+def my_task(task):
+    return f"Host is {task.host.name}"
+
+
+if __name__ == "__main__":
+
+    import ipdb
+
+    ipdb.set_trace()
+    nr = InitNornir(config_file="config.yaml")
+    aggr_results = nr.run(task=my_task)
+-------
+
+Using Pdb print out the aggr_results variable. What is the 'type' of this variable?
+
+Which keys are available on the aggr_results variable?
+
+Using Pdb assign the srx1 variable to be equal to aggr_results['srx1'].
+
+What is the type of this newly create srx1 variable? What is the length of this
+variable (use the 'len' function)?
+
+Access srx1[0] and save this to a new variable named 'result'. What is the type of
+this new variable named 'result'?
+
+In this new result variable access the result attribute (i.e. result.result). What
+is the value of this? Where in the program did this 'result.result' originate from?
+
+Modify the program such that you change this 'result' message. Re-execute the program
+and verify the result.result string for srx1 has this new value.
+
