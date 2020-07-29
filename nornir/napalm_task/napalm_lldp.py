@@ -7,8 +7,8 @@ if __name__ == "__main__":
 
     nr = InitNornir(config_file="config.yaml")
     nr = nr.filter(platform="junos")
-    agg_result = nr.run(task=napalm_get, getters=["lldp_neighbors"])
-    # agg_result = nr.run(task=napalm_get, getters=["facts"])
+    #agg_result = nr.run(task=napalm_get, getters=["interfaces"])
+    agg_result = nr.run(task=napalm_get, getters=["facts"])
 
     print()
     for k, v in agg_result.items():
