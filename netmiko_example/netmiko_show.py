@@ -10,6 +10,7 @@ device = {
     "username": "admin",
     "password": password,
     "port": 2211,
+    "global_delay_factor": 4,
 }
 
 net_connect = ConnectHandler(**device)

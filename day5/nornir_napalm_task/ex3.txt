@@ -1,0 +1,36 @@
+
+Use the "napalm_configure" plugin to stage the following configuration
+on vmx1:
+
+------
+routing-options {
+    static {
+        route 10.220.1.0/24 next-hop 10.220.0.1;
+        route 10.220.2.0/24 next-hop 10.220.0.1;
+        route 10.220.3.0/24 next-hop 10.220.0.1;
+        route 10.220.4.0/24 next-hop 10.220.0.1;
+    }
+}
+------
+
+This configuration should be stored in a file named "my_routes.conf"
+
+You can pass this configuration into the "napalm_configure" task-plugin
+by using the filename="my_routes.conf" argument.
+
+Also use the 'dry_run=True' argument so the configuration is only staged,
+but not committed.
+
+From the staged configuration print out the diff using the Python code
+below (note the 'diff' attribute is returned by the napalm_configure
+task-plugin):
+
+-------
+    print()
+    print()
+    print('-' * 40)
+    print(agg_result['vmx1'][0].diff)
+    print('-' * 40)
+    print()
+-------
+

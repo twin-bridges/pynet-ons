@@ -1,0 +1,35 @@
+
+Using the inventory created in exercise1, create a Python script that initializes
+Nornir using the following "config.yaml" file:
+
+----- config.yaml -----
+inventory:
+  plugin: nornir.plugins.inventory.simple.SimpleInventory
+  options:
+    host_file: "hosts.yaml"
+    group_file: "groups.yaml"
+    defaults_file: "defaults.yaml"
+-----------------------
+
+Your Nornir initialization should look similar to the following:
+
+--------
+from nornir import InitNornir
+
+nr = InitNornir(config_file="config.yaml")
+--------
+
+Once your core "nr" object is initialized, then print out the following from the
+"sros1" host object in inventory:
+
+  a. The "name" attribute.
+  b. The "hostname" attribute.
+  c. The "port" attribute.
+  d. The "groups" attribute.
+  e. The "platform" attribute.
+  f. The "username" attribute.
+  g. The "password" attribute.
+
+Verify the "username", "password" and "platform" are all successfully
+being retrieved from the groups.yaml file.
+

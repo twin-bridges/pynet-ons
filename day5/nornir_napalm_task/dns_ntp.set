@@ -1,0 +1,5 @@
+set system name-server 1.1.1.1    
+set system name-server 8.8.8.8 
+
+set system ntp server 130.126.24.24
+set system ntp server 152.2.21.1

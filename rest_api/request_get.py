@@ -13,6 +13,9 @@ if __name__ == "__main__":
     # url = "https://api.github.com/"
     http_headers = {"accept": "application/json; version=2.4;"}
     response = requests.get(url, headers=http_headers, verify=False)
+    import ipdb
+
+    ipdb.set_trace()
     response = response.json()
 
     print()

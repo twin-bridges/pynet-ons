@@ -12,6 +12,6 @@ device = {
     "port": 2211,
 }
 
-# Will automatically 'disconnect()'
-with ConnectHandler(**device) as net_connect:
-    print(net_connect.find_prompt())
+net_connect = ConnectHandler(**device)
+print(net_connect.find_prompt())
+# net_connect.disconnect()

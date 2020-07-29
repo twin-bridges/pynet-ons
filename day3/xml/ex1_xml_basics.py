@@ -1,5 +1,6 @@
 from lxml import etree
-import ipdb
+
+# import ipdb
 
 # Using a context manager read in the XML file
 with open("show_security_zones.xml", "r") as infile:
@@ -19,7 +20,7 @@ print("Print the XML tree")
 print("-" * 20)
 print(etree.tostring(show_security_zones, encoding="unicode", pretty_print=True))
 
-ipdb.set_trace()
+# ipdb.set_trace()
 # Exercise 1c
 print("\n\n")
 print("Print the name (tag) of the root element")

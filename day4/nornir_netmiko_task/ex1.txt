@@ -1,0 +1,9 @@
+
+Construct a Nornir script that you execute on the four Juniper devices. Use an
+"F" filter to select the Juniper devices based on group membership.
+
+Use the "netmiko_send_command" task-plugin to execute "show arp" on these four
+devices.
+
+Use the print_result() function to print out the results.
+

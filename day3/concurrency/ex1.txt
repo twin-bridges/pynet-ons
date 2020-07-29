@@ -1,0 +1,11 @@
+
+Write a simple function that accepts a "dev" dictionary (dictionary 
+with Netmiko connetion information) and a "cmd" string to execute on the device.
+Return the output of the command from the function.
+
+Using concurrent futures ThreadPoolExecutor, spawn threads to execute 
+'show router arp' on four SR-OS routers.
+
+Wait until all threads are completed, then iterate through the results and print
+the result-output.
+

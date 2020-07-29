@@ -1,0 +1,27 @@
+
+Using the following config.yaml file create a Nornir object:
+
+-------
+inventory:
+  plugin: nornir.plugins.inventory.simple.SimpleInventory
+  options:
+    host_file: "~/nornir_inventory/hosts.yaml"
+    group_file: "~/nornir_inventory/groups.yaml"
+    defaults_file: "~/nornir_inventory/defaults.yaml"
+-------
+
+After you have created the Nornir object use 'nr.run' to execute
+Nornir on a custom task that you have created. Your custom task 
+should be similar to the following:
+
+def exercise_task(task):
+
+    host = task.host
+    msg = "Some Message"
+    return msg
+
+Ideally the message would contain the host's 'name', 'hostname', and
+'port'.
+
+Use Nornir's print_result() to print out the results of this custom task.
+

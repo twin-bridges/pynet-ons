@@ -1,0 +1,6 @@
+
+Repeat exercise2 except using the "sros3" device.
+
+Verify the "username" and "password" are successfully being retrieved from the
+defaults.yaml file.
+

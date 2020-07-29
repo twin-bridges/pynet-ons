@@ -1,0 +1,17 @@
+
+Construct a Nornir SimpleInventory (hosts.yaml, groups.yaml, and defaults.yaml)
+with the following characteristics:
+
+a. The hosts.yaml file should contain four SR-OS hosts each with the same
+   "hostname" of "sros.lasthop.io" and with the "port" of 2211, 2212, 2213,
+   and 2214, respectively (for "sros1" through "sros4").
+
+b. The "sros1" and "sros2" hosts should belong to the "azure" group and should
+   use the username of "nokia" and the password of "test123".
+
+c. The "sros3" and "sros4" hosts should belong to the "dc1" group and should use
+   the default username and password of admin/admin. This default username and 
+   password should be defined in the defaults.yaml file.
+
+e. Both the "azure" and the "dc1" group should have the platform set to "nokia_sros".
+

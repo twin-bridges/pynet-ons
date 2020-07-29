@@ -1,0 +1,64 @@
+---
+sros1:
+  device_type: nokia_sros
+  host: sros.lasthop.io
+  port: 2211
+  username: admin
+  password: admin
+
+sros2:
+  device_type: nokia_sros
+  host: sros.lasthop.io
+  port: 2212
+  username: admin
+  password: admin
+
+sros3:
+  device_type: nokia_sros
+  host: sros.lasthop.io
+  port: 2213
+  username: admin
+  password: admin
+
+sros4:
+  device_type: nokia_sros
+  host: sros.lasthop.io
+  port: 2214
+  username: admin
+  password: admin
+
+vmx1:
+  device_type: juniper_junos
+  host: vmx1.lasthop.io
+  username: pyclass
+  password: 88newclass
+
+vmx2:
+  device_type: juniper_junos
+  host: vmx2.lasthop.io
+  username: pyclass
+  password: 88newclass
+
+srx1:
+  device_type: juniper_junos
+  host: srx1.lasthop.io
+  username: pyclass
+  password: 88newclass
+
+srx2:
+  device_type: juniper_junos
+  host: srx2.lasthop.io
+  username: pyclass
+  password: 88newclass
+
+juniper:
+  - vmx1
+  - vmx2
+  - srx1
+  - srx2
+
+sros:
+  - sros1
+  - sros2
+  - sros3
+  - sros4

@@ -1,0 +1,24 @@
+---
+sros1:
+    hostname: sros.lasthop.io
+    port: 2211
+    groups:
+      - azure
+
+sros2:
+    hostname: sros.lasthop.io
+    port: 2212
+    groups:
+      - azure
+
+sros3:
+    hostname: sros.lasthop.io
+    port: 2213
+    groups:
+      - dc1
+
+sros4:
+    hostname: sros.lasthop.io
+    port: 2214
+    groups:
+      - dc1
