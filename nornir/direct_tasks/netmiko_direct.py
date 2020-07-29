@@ -16,6 +16,9 @@ def netmiko_direct(task):
     print("#" * 80)
     print()
 
+    # Close the connection
+    task.host.close_connection("netmiko")
+
 
 if __name__ == "__main__":
     nr = InitNornir(config_file="config.yaml")

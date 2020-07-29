@@ -1,0 +1,12 @@
+
+Create a Nornir script that establishes a NAPALM direct connection to
+each of the Junos devices (in a custom task).
+
+Use the 'napalm_obj.device' attribute to retrieve the underlying Juniper
+PyEZ object.
+
+Return the PyEZ 'facts' from the custom task.
+
+Use the print_result() function in your main program to print out the
+result from custom task (thus printing the device's PyEZ 'facts').
+
