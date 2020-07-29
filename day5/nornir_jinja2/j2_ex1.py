@@ -2,21 +2,20 @@ from nornir import InitNornir
 from nornir.plugins.tasks.networking import napalm_configure
 from nornir.plugins.tasks.text import template_file
 
+
 def generate_config(task):
 
     host = task.host
     template = "dns_ntp.j2"
-    result = task.run(
-        task=template_file, template=template, path=".", **host
-    )
+    result = task.run(task=template_file, template=template, path=".", **host)
 
     # Save the config to the host
-    host.data['config'] = result.result
+    host.data["config"] = result.result
 
 
 def config_device(task):
     host = task.host
-    my_config = host['config']
+    my_config = host["config"]
     task.run(task=napalm_configure, configuration=my_config, dry_run=True)
 
 
