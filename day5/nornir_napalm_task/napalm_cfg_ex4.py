@@ -2,7 +2,7 @@ from nornir import InitNornir
 from nornir.plugins.tasks.networking import napalm_configure
 
 
-def main():
+if __name__ == "__main__":
 
     nr = InitNornir(config_file="config.yaml")
     junos = nr.filter(platform="junos")
@@ -19,7 +19,3 @@ def main():
         print(multi_result[0].diff)
         print("-" * 40)
         print()
-
-
-if __name__ == "__main__":
-    main()

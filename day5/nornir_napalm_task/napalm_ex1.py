@@ -10,9 +10,9 @@ if __name__ == "__main__":
     agg_result = nr.run(task=napalm_get, getters=["interfaces_ip"])
 
     print()
-    for k, v in agg_result.items():
+    for device_name, m_result in agg_result.items():
         print("-" * 50)
-        print(k)
-        pprint(v[0].result)
+        print(device_name)
+        pprint(m_result[0].result)
         print("-" * 50)
     print()

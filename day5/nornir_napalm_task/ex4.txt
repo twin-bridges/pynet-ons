@@ -1,6 +1,6 @@
 
-Use the "napalm_configure" plugin to configure the following configuration
-on all four of the Juniper devices
+Use the "napalm_configure" plugin to configure the below items on the
+the four Juniper lab devices.
 
 ------
 set system name-server 1.1.1.1    
@@ -13,11 +13,12 @@ set system ntp server 152.2.21.1
 This configuration should be stored in a file named "dns_ntp.set"
 
 You can pass this configuration into the "napalm_configure" task-plugin
-by using the filename="dns_ntp.set" argument.
+using the filename="dns_ntp.set" argument.
 
-Commit the changes i.e. dry_run=False and print out the diff using
-the below Python code (where 'agg_result' is the result from the
-execution of 'napalm_configure' using 'nr.run()').
+Commit the changes to the devices i.e. dry_run=False.
+
+Also print out the diff using the below Python code (where 'agg_result'
+is the result from the execution of 'napalm_configure').
 
 -------
     for hostname, multi_result in agg_result.items():

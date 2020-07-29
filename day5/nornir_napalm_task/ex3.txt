@@ -13,17 +13,19 @@ routing-options {
 }
 ------
 
-This configuration should be stored in a file named "my_routes.conf"
+This configuration should be stored in a file named, "my_routes.conf"
 
 You can pass this configuration into the "napalm_configure" task-plugin
-by using the filename="my_routes.conf" argument.
+using the filename="my_routes.conf" argument.
 
 Also use the 'dry_run=True' argument so the configuration is only staged,
 but not committed.
 
 From the staged configuration print out the diff using the Python code
-below (note the 'diff' attribute is returned by the napalm_configure
-task-plugin):
+below.
+
+Note the 'diff' attribute is returned by the napalm_configure
+task-plugin.
 
 -------
     print()
