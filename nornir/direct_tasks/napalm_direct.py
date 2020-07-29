@@ -15,9 +15,9 @@ def direct(task):
     # PyEZ RPC
     xml_output = jnpr_conn.rpc.get_software_information()
     print()
-    print('-' * 40)
+    print("-" * 40)
     print(etree.tostring(xml_output, encoding="unicode", pretty_print=True))
-    print('-' * 40)
+    print("-" * 40)
     print()
 
 

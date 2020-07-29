@@ -6,10 +6,10 @@ from nornir.plugins.functions.text import print_result
 
 def my_task(task):
     print()
-    print('-' * 40)
+    print("-" * 40)
     print(f"Task: {task}")
     print(f"Host: {task.host.name}")
-    print('-' * 40)
+    print("-" * 40)
     print()
 
 

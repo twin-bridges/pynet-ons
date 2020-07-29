@@ -1,11 +1,13 @@
 from nornir import InitNornir
 from nornir.plugins.functions.text import print_result
-from nornir.plugins.tasks.data import load_yaml # noqa
-from nornir.plugins.tasks.data import load_json # noqa
+from nornir.plugins.tasks.data import load_yaml  # noqa
+from nornir.plugins.tasks.data import load_json  # noqa
 
 
 def custom_task(task):
-    import ipdb; ipdb.set_trace()
+    import ipdb
+
+    ipdb.set_trace()
     # my_data = task.run(task=load_yaml, file=f"sros/{task.host.name}.yaml")
     my_data = task.run(task=load_json, file=f"sros/{task.host.name}.json")
     print(my_data.result)

@@ -23,16 +23,18 @@ if __name__ == "__main__":
     sros = nr.filter(F(groups__contains="sros"))
 
     # Run task
-    import ipdb; ipdb.set_trace()
+    import ipdb
+
+    ipdb.set_trace()
     aggr_result = sros.run(task=my_task)
 
     # Print results
     print()
-    print('-' * 30)
+    print("-" * 30)
     print(f"SROS1-result0:\n{aggr_result['sros1'][0].result}")
-    print('-' * 30)
+    print("-" * 30)
     print(f"SROS1-result1:\n{aggr_result['sros1'][1].result}")
-    print('-' * 30)
+    print("-" * 30)
     print(f"SROS1-result2:\n{aggr_result['sros1'][2].result}")
-    print('-' * 30)
+    print("-" * 30)
     print()
