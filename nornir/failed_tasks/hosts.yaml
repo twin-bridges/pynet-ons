@@ -1,0 +1,24 @@
+---
+srx1:
+    hostname: srx1.lasthop.io
+    password: invalid
+    groups:
+      - junos
+
+srx2:
+    hostname: srx2.lasthop.io
+    password: invalid
+    groups:
+      - junos
+
+vmx1:
+    hostname: vmx1.lasthop.io
+    password: invalid
+    groups:
+      - junos
+
+vmx2:
+    hostname: vmx2.lasthop.io
+    password: invalid
+    groups:
+      - junos
