@@ -1,0 +1,26 @@
+---
+sros:
+  username: admin
+  password: admin
+  platform: nokia_sros
+  data:
+    site: Azure
+
+junos:
+  platform: junos
+  connection_options:
+    netmiko:
+      platform: juniper_junos
+      extras: {}
+    napalm:
+      extras:
+        optional_args: {}
+  data:
+    dns1: 1.1.1.1
+    dns2: 8.8.8.8 
+    ntp1: 130.126.24.24
+    ntp2: 152.2.21.1
+
+
+
+

@@ -1,0 +1,30 @@
+
+Create the following Jinja2 file:
+
+------
+$ cat dns_ntp.j2 
+set system name-server {{ dns1 }}
+set system name-server {{ dns2 }}
+set system ntp server {{ ntp1 }}
+set system ntp server {{ ntp2 }}
+------
+
+Next add the two DNS servers and the two NTP servers to the junos group
+in groups.yaml (in the 'data' field).
+
+Now create a Nornir script and filter your inventory to only the 'junos'
+devices.
+
+Use the 'template-file' task-plugin to render the Jinja2 using inventory
+variables. You will have to do this in a custom task and pass in
+**task.host (to pass the variables in from the 'data' field).
+
+Save the rendered config to 'task.host['config'] (so that it can be used
+in a future Nornir task).
+
+Finally, use the "napalm_configure" task-plugin to configure the rendered
+configurations onto the junos devices. Once again you will need to do 
+this in a custom task.
+
+You will need to retrieve the configuration from task.host['config'].
+
