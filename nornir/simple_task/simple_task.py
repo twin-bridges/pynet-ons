@@ -9,6 +9,7 @@ def my_task(task):
 
 if __name__ == "__main__":
 
+    import ipdb; ipdb.set_trace()
     nr = InitNornir(config_file="config.yaml")
-    results = nr.run(task=my_task)
-    print_result(results)
+    aggr_result = nr.run(task=my_task)
+    print_result(aggr_result)
