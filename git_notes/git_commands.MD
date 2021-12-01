@@ -38,19 +38,19 @@ git diff <file_name>
 
 ## Push changes to remote repository
 ```
-git push origin master  
+git push origin main
 
 where 'origin' is defined in 'git remote -v'  
-where 'master' branch is the src branch; dest branch is same as src branch  
+where 'main' branch is the src branch; dest branch is same as src branch  
 ```
 
 
 ## Pull changes from remote repository
 ```
-git pull origin master  
+git pull origin main
 
 where 'origin' is defined in 'git remote -v'  
-where 'master' branch is the src branch; dest branch is same as src branch  
+where 'main' branch is the src branch; dest branch is same as src branch  
 ```
 
 
@@ -59,9 +59,9 @@ where 'master' branch is the src branch; dest branch is same as src branch
 git branch                          # Look at branches  
 git branch dev                      # Create a 'dev' branch  
 git checkout dev                    # Switch to 'dev' branch  
-git checkout master                 # Switch back to 'master' branch  
+git checkout main                   # Switch back to 'main' branch  
 git push origin dev                 # Push changes up to GitHub for 'dev' branch jj
-git merge dev                       # merge 'dev' into master (switch to 'master' branch first)  
+git merge dev                       # merge 'dev' into main (switch to 'main' branch first)  
 git branch -d dev                   # delete this branch  
 git branch -vv                      # To see the remote branch that it is tracking
 git branch -u origin/develop        # Set current branch to track origin/develop (must exist)
